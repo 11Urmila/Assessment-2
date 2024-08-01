@@ -13,13 +13,16 @@ import java.io.FileReader;
 public class Student
 {
        private static String unitName;
-        private static List<String[]> students = new ArrayList<>();
+       private static List<String[]> students = new ArrayList<>();
+        
        public static void main(String[] args)
        {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the filename: ");
         String filename = scanner.nextLine();
+        readFromFile(filename);
        }
+       
        private static void readFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
