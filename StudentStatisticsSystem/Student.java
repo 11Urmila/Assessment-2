@@ -21,6 +21,16 @@ public class Student
         System.out.println("Enter the filename: ");
         String filename = scanner.nextLine();
         readFromFile(filename);
+        
+        int choice;
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Compute and print student-wise marks");
+            System.out.println("2. Filter and print students below threshold");
+            System.out.println("3. Sort and print top 5 students with highest and lowest marks");
+            System.out.println("4. Exit");
+            choice = scanner.nextInt();
+        } while((choice != 4));
        }
        
        private static void readFromFile(String filename) {
