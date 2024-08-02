@@ -30,6 +30,9 @@ public class Student
             System.out.println("3. Sort and print top 5 students with highest and lowest marks");
             System.out.println("4. Exit");
             choice = scanner.nextInt();
+            switch (choice) {
+                 
+            }
         } while((choice != 4));
        }
        
