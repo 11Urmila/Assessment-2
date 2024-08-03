@@ -42,6 +42,13 @@ public class Student
         return str == null || str.length() == 0;
        }
        
+       private static double parseDouble(String str) {
+        try {
+            return Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            return 0.0;
+        }
+        }
         private static void printStudentMarks() {
         System.out.println("Unit: " + unitName);
         for (String[] student : students) {
