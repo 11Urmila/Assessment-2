@@ -6,5 +6,5 @@ comment1.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=void\ printStudentMarks()
 comment3.params=filename
-comment3.target=void\ readFromFile(java.lang.String)
+comment3.target=void\ readInputFromFile(java.lang.String)
 numComments=4

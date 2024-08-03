@@ -20,7 +20,7 @@ public class Student
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the filename: ");
         String filename = scanner.nextLine();
-        readFromFile(filename);
+        readInputFromFile(filename);
         
         int choice;
         do {
@@ -55,18 +55,14 @@ public class Student
         }
     }
 
-       private static void readFromFile(String filename) {
+        private static void readInputFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            unitName = br.readLine(); 
+            br.readLine(); 
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.startsWith("#")) {
-                    continue; 
-                }
-
                 String[] parts = line.split(",");
-                if (parts.length == 1) {
-                    unitName = parts[0];
-                } else if (parts.length == 5) {
+                if (parts.length == 6) { 
                     students.add(parts);
                 }
             }
