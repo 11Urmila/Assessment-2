@@ -31,11 +31,27 @@ public class Student
             System.out.println("4. Exit");
             choice = scanner.nextInt();
             switch (choice) {
-                 
+                
             }
         } while((choice != 4));
        }
-       
+        private static void printStudentMarks() {
+        System.out.println("Unit: " + unitName);
+        for (String[] student : students) {
+            String lastName = student[0];
+            String firstName = student[1];
+            String id = student[2];
+            int mark1 = student[3].isEmpty() ? 0 : Integer.parseInt(student[3]);
+            int mark2 = student[4].isEmpty() ? 0 : Integer.parseInt(student[4]);
+            int mark3 = student[5].isEmpty() ? 0 : Integer.parseInt(student[5]);
+            int totalMark = mark1 + mark2 + mark3;
+
+            System.out.println(firstName + " " + lastName + " (" + id + "): " +
+                    mark1 + ", " + mark2 + ", " + mark3 +
+                    " -> Total: " + totalMark);
+        }
+    }
+
        private static void readFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
