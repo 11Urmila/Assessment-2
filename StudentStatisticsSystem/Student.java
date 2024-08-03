@@ -31,7 +31,10 @@ public class Student
             System.out.println("4. Exit");
             choice = scanner.nextInt();
             switch (choice) {
-                
+                 case 0:
+                     printStudentMarks();
+                     break;
+                     
             }
         } while((choice != 4));
        }
