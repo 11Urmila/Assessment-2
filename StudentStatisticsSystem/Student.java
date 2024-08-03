@@ -38,6 +38,10 @@ public class Student
             }
         } while((choice != 4));
        }
+        private static boolean isStringEmpty(String str) {
+        return str == null || str.length() == 0;
+       }
+       
         private static void printStudentMarks() {
         System.out.println("Unit: " + unitName);
         for (String[] student : students) {
