@@ -42,6 +42,9 @@ public class Student
                  case 3:
                     sortAndDisplayTop5Students();
                     break;
+                  case 4:
+                    System.out.println("Closing the program...");
+                    break;
                      
             }
         } while((choice != 4));
