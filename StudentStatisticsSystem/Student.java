@@ -31,7 +31,7 @@ public class Student
             System.out.println("4. Exit");
             choice = scanner.nextInt();
             switch (choice) {
-                 case 0:
+                 case 1:
                      displayStudentMarks();
                      break;
                  case 2: 
@@ -51,6 +51,7 @@ public class Student
                      
             }
         } while((choice != 4));
+          scanner.close();
        }
         private static boolean isStringEmpty(String str) {
         return str == null || str.length() == 0;
