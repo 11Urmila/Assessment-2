@@ -45,6 +45,9 @@ public class Student
                   case 4:
                     System.out.println("Closing the program...");
                     break;
+                default:
+                System.out.println("Invalid input. Try again.");
+
                      
             }
         } while((choice != 4));
