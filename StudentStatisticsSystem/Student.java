@@ -34,6 +34,11 @@ public class Student
                  case 0:
                      displayStudentMarks();
                      break;
+                 case 2: 
+                    System.out.println("Enter threshold: ");
+                    double thresholdVal = scanner.nextDouble();
+                    filterAndDisplayStudentsBelowThreshold(thresholdVal);
+                    break;
                      
             }
         } while((choice != 4));
@@ -64,6 +69,7 @@ public class Student
             }
         }
     }
+    
         
        private static double getMark(String mark) {
         if (isStringEmpty(mark)) {
