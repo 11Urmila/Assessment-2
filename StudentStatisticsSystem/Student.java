@@ -54,6 +54,41 @@ public class Student
             return 0.0;
         }
     }
+     private static void sortAndDisplayTop5Students() {
+        for (int i = 0; i < students.size() - 1; i++) {
+            for (int j = i + 1; j < students.size(); j++) {
+                double totalA = getMark(students.get(i)[3]) + getMark(students.get(i)[4]) + getMark(students.get(i)[5]);
+                double totalB = getMark(students.get(j)[3]) + getMark(students.get(j)[4]) + getMark(students.get(j)[5]);
+
+                if (totalA > totalB) {
+                    String[] temp = students.get(i);
+                    students.set(i, students.get(j));
+                    students.set(j, temp);
+                }
+            }
+        }
+
+        System.out.println("Top 5 students with lowest marks:");
+        for (int i = 0; i < 5 && i < students.size(); i++) {
+            String[] student = students.get(i);
+            String lastName = student[0];
+            String firstName = student[1];
+            String id = student[2];
+            double totalMark = getMark(student[3]) + getMark(student[4]) + getMark(student[5]);
+            System.out.println(firstName + " " + lastName + " (" + id + "): " + totalMark);
+        }
+
+        System.out.println("Top 5 students with highest marks:");
+        for (int i = students.size() - 1; i >= students.size() - 5 && i >= 0; i--) {
+            String[] student = students.get(i);
+            String lastName = student[0];
+            String firstName = student[1];
+            String id = student[2];
+            double totalMark = getMark(student[3]) + getMark(student[4]) + getMark(student[5]);
+            System.out.println(firstName + " " + lastName + " (" + id + "): " + totalMark);
+        }
+    }
+
     private static void filterAndDisplayStudentsBelowThreshold(double threshold) {
         for (String[] student : students) {
             String lastName = student[0];
