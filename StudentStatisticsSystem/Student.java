@@ -12,16 +12,20 @@ import java.io.FileReader;
  */
 public class Student
 {
-       private static String unitName;
-       private static List<String[]> students = new ArrayList<>();
-        
-       public static void main(String[] args)
+    //Declare unitName as string variable class level
+    private static String unitName;
+    //Declare Array list to hold students
+    private static List<String[]> students = new ArrayList<>();
+    //Main method which control the whole system 
+    public static void main(String[] args)
        {
+        //ask the user to enter filename
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the filename: ");
         String filename = scanner.nextLine();
+        //read input from the file
         readInputFromFile(filename);
-        
+        //Menu for the program
         int choice;
         do {
             System.out.println("Menu:");
@@ -51,19 +55,21 @@ public class Student
                      
             }
         } while((choice != 4));
-          scanner.close();
+          scanner.close();//close the file
        }
-        private static boolean isStringEmpty(String str) {
+    //This method is used to verify the string is empty or not  
+    private static boolean isStringEmpty(String str) {
         return str == null || str.length() == 0;
     }
-       
-       private static double parseDouble(String str) {
+    //This method convert the string into double data type
+    private static double parseDouble(String str) {
         try {
             return Double.parseDouble(str);
         } catch (NumberFormatException e) {
             return 0.0;
         }
     }
+    //This method sort and display the Top 5 students with lowest and highest marks
      private static void sortAndDisplayTop5Students() {
         for (int i = 0; i < students.size() - 1; i++) {
             for (int j = i + 1; j < students.size(); j++) {
@@ -98,7 +104,7 @@ public class Student
             System.out.println(firstName + " " + lastName + " (" + id + "): " + totalMark);
         }
     }
-
+    //This method allows the user to search the students below th threshold entered by the user.
     private static void filterAndDisplayStudentsBelowThreshold(double threshold) {
         for (String[] student : students) {
             String lastName = student[0];
@@ -114,8 +120,7 @@ public class Student
             }
         }
     }
-    
-        
+    //This method validate that the marks is double or empty string 
        private static double getMark(String mark) {
         if (isStringEmpty(mark)) {
             return 0;
@@ -123,7 +128,7 @@ public class Student
             return parseDouble(mark);
         }
     }
-       
+    //This method display the student marks on the output from the file with the total marks
     private static void displayStudentMarks() {
         System.out.println("Unit: " + unitName);
         for (String[] student : students) {
@@ -140,7 +145,7 @@ public class Student
                     " -> Total: " + totalMark);
         }
     }
-
+    //This method read the input file
         private static void readInputFromFile(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             unitName = br.readLine(); 
