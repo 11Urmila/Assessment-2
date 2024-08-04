@@ -40,7 +40,7 @@ public class Student
        }
         private static boolean isStringEmpty(String str) {
         return str == null || str.length() == 0;
-       }
+    }
        
        private static double parseDouble(String str) {
         try {
@@ -48,7 +48,22 @@ public class Student
         } catch (NumberFormatException e) {
             return 0.0;
         }
-       }
+    }
+    private static void filterAndDisplayStudentsBelowThreshold(double threshold) {
+        for (String[] student : students) {
+            String lastName = student[0];
+            String firstName = student[1];
+            String id = student[2];
+            double mark1 = getMark(student[3]);
+            double mark2 = getMark(student[4]);
+            double mark3 = getMark(student[5]);
+            double totalMark = mark1 + mark2 + mark3;
+
+            if (totalMark < threshold) {
+                System.out.println(firstName + " " + lastName + " (" + id + "): " + totalMark);
+            }
+        }
+    }
         
        private static double getMark(String mark) {
         if (isStringEmpty(mark)) {
@@ -56,7 +71,7 @@ public class Student
         } else {
             return parseDouble(mark);
         }
-       }
+    }
        
     private static void displayStudentMarks() {
         System.out.println("Unit: " + unitName);
