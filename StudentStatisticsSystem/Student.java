@@ -39,6 +39,9 @@ public class Student
                     double thresholdVal = scanner.nextDouble();
                     filterAndDisplayStudentsBelowThreshold(thresholdVal);
                     break;
+                 case 3:
+                    sortAndDisplayTop5Students();
+                    break;
                      
             }
         } while((choice != 4));
